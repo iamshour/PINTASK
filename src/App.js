@@ -1,5 +1,5 @@
 import Header from "./comps/Header";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Tasks from "./comps/Tasks";
 
 import "./styles/resets.scss";
@@ -12,22 +12,22 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
 
-  // useEffect(() => {
-  //   const getTasks = async () => {
-  //     const tasksFromServer = await fetchTasks()
-  //     setTasks(tasksFromServer)
-  //   }
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
+    }
     
-  //   getTasks()
-  // }, [])
+    getTasks()
+  }, [])
   
   // Fetch Tasks
-  // const fetchTasks = async () => {
-  //   const res = await fetch('http://localhost:5000/tasks')
-  //   const data = await res.json()
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
 
-  //   return data
-  // }
+    return data
+  }
 
   // Adding Tasks
   const addTask = (task) => {
