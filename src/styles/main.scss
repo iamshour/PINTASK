@@ -1,4 +1,4 @@
-$green: #06b178;
+$green: #0dcf8f;
 $gq: #aafadf;
 $blue: #6052d8;
 $blue-dark: #1c0cb4;
@@ -7,12 +7,16 @@ body {
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2308C083'/%3E%3Cstop offset='1' stop-color='%236052D8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .app {
     width: 80vw;
     max-width: 80rem;
-    min-height: 20rem;
+    min-width: 28rem;
+    min-height: 18rem;
     margin: 6rem auto;
     background: linear-gradient( to right bottom,rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.6));
     overflow: auto;
@@ -67,7 +71,7 @@ header {
     }
 
     .open {
-        background: #10e09b;
+        background: $green;
     }
     .close {
         background: #d11a09;
@@ -187,8 +191,16 @@ header {
 
 @media screen and (max-width: 400px) {
     .app {
-        padding: 3.2rem 1.6rem;
-        margin: 3rem 0;
+        padding: 2.4rem 1.6rem;
+        min-height: 16rem;
+    }
+
+    header {
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: .4rem;
+        }
     }
 
     .task {
@@ -197,11 +209,10 @@ header {
             width: 90%;
     
             h3 {
-                font-size: 1.7rem;
+                font-size: 1.6rem;
             }
     
             p {
-                font-weight: 600;
                 font-size: 1rem;
             }
         }
