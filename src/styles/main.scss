@@ -1,0 +1,202 @@
+$green: #08c083;
+$blue: #6052d8;
+$blue-dark: #1c0cb4;
+
+.app {
+    max-width: 80rem;
+    min-height: 30rem;
+    margin: 6rem auto;
+    overflow: auto;
+    border: 1px solid #90dbc2;
+    border-radius: 5px;
+    padding: 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    h1 {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+        text-transform: uppercase;
+        background: linear-gradient(360deg, #16eca5 0%, #7d70f3 100%);
+        background: -webkit-linear-gradient(360deg, #16eca5 0%, #7d70f3 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: .4rem;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: .6rem 1.2rem;
+        margin: .5rem;
+        cursor: pointer;
+        border-radius: .5rem;
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #f2f2f2;
+        font-weight: 400;
+
+        .icon {
+            margin-left: .8rem;
+            font-size: 2.4rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: scale(.98);
+        }
+    }
+
+    .open {
+        background: #10e09b;
+    }
+    .close {
+        background: #d11a09;
+    }
+}
+
+.task {
+    background: linear-gradient(360deg, #bef6e4 0%, #E5E2FD 100%);
+    background: -webkit-linear-gradient(360deg, #bef6e4 0%, #E5E2FD 100%);
+    margin: 1.2rem .4rem;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .task-text {
+        display: flex;
+        flex-direction: column;
+        width: 88%;
+
+        h3 {
+            font-size: 1.8rem;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: .8rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: $blue;
+        }
+    }
+    .close-icon {
+        font-size: 2.4rem;
+        cursor: pointer;
+    }
+}
+
+.complete {
+    transition: all 0.2s ease-in;
+    border-left: 5px solid #058359;
+    opacity: 0.6;
+
+    h3 {
+        text-decoration: line-through;
+    }
+}
+
+.msg {
+    color: $blue;
+    font-size: 1.6rem;
+}
+
+.add-form {
+    width: 100%;
+    margin-bottom: 4.4rem;
+
+    .row:first-of-type {
+        margin-bottom: 1.6rem;
+    }
+    .row:nth-of-type(2) {
+        margin-bottom: 2.4rem;
+    }
+
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        label {
+            font-size: 1.6rem;
+            margin-bottom: .8rem;
+        }
+
+        input {
+            padding: 1rem 0rem 1rem 1rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-style: solid;
+            border-color: $green;
+            outline: none;
+            border-left-color: $green;
+        }
+
+        input::placeholder {
+            font-size: 1.4rem;
+        }
+    }
+
+    input[type=submit] {
+        width: 100%;
+        padding: .8rem 0;
+        background: linear-gradient(90deg, #4BE6B4 30%, #6C5CF4 100%);
+        background: #6C5CF4;
+        border: 1px solid #6C5CF4;
+        outline: none;
+        border-radius: 2px;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        color: #f2f2f2;
+        cursor: pointer;
+        transition: all .3s ease-in;
+
+        &:hover {
+            transition: all .3s ease-in;
+            background: #BDB5FA;
+            color: #1F0CB3;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .app {
+        padding: 3.2rem 1.6rem;
+        margin: 3rem 0;
+    }
+
+    .task {
+    
+        .task-text {
+            width: 90%;
+    
+            h3 {
+                font-size: 1.7rem;
+            }
+    
+            p {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+        .close-icon {
+            font-size: 2rem;
+        }
+    }
+}
