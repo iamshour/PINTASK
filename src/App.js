@@ -10,26 +10,24 @@ function App() {
 
   const [showAddTask, setShowAddTask] = useState(false)
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'Appointment-1',
-      day: 'Feb 4th at 2:30pm',
-      complete: false,
-    },
-    {
-      id: 2,
-      text: 'Appointment-2',
-      day: 'Feb 6th at 2:30pm',
-      complete: true,
-    },
-    {
-      id: 3,
-      text: 'Appointment-3',
-      day: 'Feb 8th at 2:30pm',
-      complete: false,
-    }
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  // useEffect(() => {
+  //   const getTasks = async () => {
+  //     const tasksFromServer = await fetchTasks()
+  //     setTasks(tasksFromServer)
+  //   }
+    
+  //   getTasks()
+  // }, [])
+  
+  // Fetch Tasks
+  // const fetchTasks = async () => {
+  //   const res = await fetch('http://localhost:5000/tasks')
+  //   const data = await res.json()
+
+  //   return data
+  // }
 
   // Adding Tasks
   const addTask = (task) => {
